@@ -17,5 +17,13 @@ body {
 }
 
 #app {
+  display: flex;
+  justify-content: center;
   padding: var(--spacing-default);
+}
+
+@media (min-width: 600px) {
+  #app {
+    padding: var(--spacing-large);
+  }
 }

@@ -1,5 +1,6 @@
 .book-stores {
   width: 100%;
+  max-width: 1200px;
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -10,8 +11,36 @@
   position: relative;
   width: 100%;
   box-shadow: rgba(149, 157, 165, 0.2) 0 var(--spacing-medium)
-    var(--spacing-large);
+    var(--spacing-medium);
   background-color: #fff;
+}
+
+.book-store:not(:last-child) {
+  margin-bottom: var(--spacing-default);
+}
+
+@media (min-width: 600px) {
+  .book-store {
+    display: grid;
+    grid-template-columns: 174px 1fr;
+    font-size: 1.5rem;
+  }
+
+  .book-store:not(:last-child) {
+    margin-bottom: var(--spacing-large);
+  }
+}
+
+@media (min-width: 1024px) {
+  .book-store {
+    display: grid;
+    grid-template-columns: 274px 1fr;
+    font-size: 1.5rem;
+  }
+
+  .book-store:not(:last-child) {
+    margin-bottom: var(--spacing-large);
+  }
 }
 
 .book-store__image {
@@ -19,12 +48,38 @@
   padding: var(--spacing-default) 0 0 var(--spacing-default);
 }
 
+@media (min-width: 600px) {
+  .book-store__image {
+    width: 150px;
+    padding: var(--spacing-large) 0 0 var(--spacing-large);
+  }
+}
+
+@media (min-width: 1024px) {
+  .book-store__image {
+    width: 250px;
+  }
+}
+
 .book-store__text {
-  padding: var(--spacing-default);
+  padding: var(--spacing-default) 0 var(--spacing-default)
+    var(--spacing-default);
+}
+
+@media (min-width: 600px) {
+  .book-store__text {
+    padding: var(--spacing-large) 0 0 var(--spacing-large);
+  }
 }
 
 .book-store__name {
   margin: 0 0 var(--spacing-medium) 0;
+}
+
+@media (min-width: 1024px) {
+  .book-store__name {
+    margin: 0 0 var(--spacing-large) 0;
+  }
 }
 
 .book-store__rating {
@@ -36,16 +91,68 @@
   list-style: none;
 }
 
+@media (min-width: 600px) {
+  .book-store__rating {
+    top: var(--spacing-large);
+    right: var(--spacing-large);
+  }
+}
+
 .book-store__star:not(:last-child) {
   margin-right: var(--spacing-medium);
 }
 
+.book-store__books {
+  width: calc(100% - var(--spacing-default));
+}
+
+@media (min-width: 600px) {
+  .book-store__books {
+    width: calc(100% - var(--spacing-large));
+  }
+}
+
+.book-store__books,
+.book-store__book-header,
+.book-store__book-info {
+  padding: var(--spacing-small);
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+@media (min-width: 600px) {
+  .book-store__books,
+  .book-store__book-header,
+  .book-store__book-info {
+    padding: var(--spacing-medium);
+  }
+}
+
+@media (min-width: 1024px) {
+  .book-store__books,
+  .book-store__book-header,
+  .book-store__book-info {
+    padding: var(--spacing-default);
+  }
+}
+
+.book-store__book-header {
+  border-right: 0;
+}
+
 .book-store__info {
+  grid-column: 1 / -1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: var(--spacing-default);
   padding-top: 0;
+}
+
+@media (min-width: 600px) {
+  .book-store__info {
+    padding: var(--spacing-large);
+  }
 }
 
 .book-store__flag {

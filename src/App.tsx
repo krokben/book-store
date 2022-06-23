@@ -38,7 +38,10 @@ const dummyBookStore = {
 };
 
 export function App() {
-  const [bookStores, setBookStores] = useState<BookStore[]>([dummyBookStore]);
+  const [bookStores, setBookStores] = useState<BookStore[]>([
+    dummyBookStore,
+    dummyBookStore,
+  ]);
 
   return (
     <>
