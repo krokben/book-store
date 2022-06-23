@@ -16,6 +16,15 @@ body {
   background-color: #eee;
 }
 
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: deepskyblue;
+}
+
 #app {
   display: flex;
   justify-content: center;

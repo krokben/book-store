@@ -151,11 +151,13 @@
   align-items: center;
   padding: var(--spacing-default);
   padding-top: 0;
+  font-size: 0.75rem;
 }
 
 @media (min-width: 600px) {
   .book-store__info {
     padding: var(--spacing-large);
+    font-size: 1.25rem;
   }
 }
 

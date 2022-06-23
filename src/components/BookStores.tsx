@@ -72,7 +72,8 @@ export const BookStores = ({
           </div>
           <div className="book-store__info">
             <span>
-              {getFormattedDate(establishmentDate)} - {website}
+              {getFormattedDate(establishmentDate)} -{" "}
+              <a href={website}>{website}</a>
             </span>
             <img
               className="book-store__flag"
