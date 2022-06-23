@@ -31,7 +31,9 @@ export const BookStores = ({ bookStores }: { bookStores: BookStore[] }) => (
             <h2 className="book-store__name">{name}</h2>
             <ul className="book-store__rating">
               {[...Array(rating)].map((_, index) => (
-                <li key={index}>⭐</li>
+                <li className="book-store__star" key={index}>
+                  ⭐
+                </li>
               ))}
             </ul>
             <table className="book-store__books">

@@ -9,12 +9,14 @@
 .book-store {
   position: relative;
   width: 100%;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 var(--spacing-medium)
+    var(--spacing-large);
   background-color: #fff;
 }
 
 .book-store__image {
-  padding: var(--spacing-default);
+  width: 100px;
+  padding: var(--spacing-default) 0 0 var(--spacing-default);
 }
 
 .book-store__text {
@@ -22,7 +24,7 @@
 }
 
 .book-store__name {
-  margin: 0 0 24px 0;
+  margin: 0 0 var(--spacing-medium) 0;
 }
 
 .book-store__rating {
@@ -32,6 +34,10 @@
   right: var(--spacing-default);
   padding: 0;
   list-style: none;
+}
+
+.book-store__star:not(:last-child) {
+  margin-right: var(--spacing-medium);
 }
 
 .book-store__info {
