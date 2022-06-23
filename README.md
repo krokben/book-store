@@ -1,6 +1,18 @@
 # book-store
 
-To start the local dev server (with hot reloading), use:
+To install, run:
+
+```
+yarn
+```
+
+or
+
+```
+npm install
+```
+
+To start the local dev server (with hot reloading), run:
 
 ```
 yarn start
@@ -14,7 +26,7 @@ npm run start
 
 Then navigate to `http:localhost:1324`.
 
-To build, use:
+To build, run:
 
 ```
 yarn build

@@ -45,12 +45,15 @@
 
 .book-store__image {
   width: 100px;
+  height: 100px;
   padding: var(--spacing-default) 0 0 var(--spacing-default);
+  object-fit: cover;
 }
 
 @media (min-width: 600px) {
   .book-store__image {
     width: 150px;
+    height: 150px;
     padding: var(--spacing-large) 0 0 var(--spacing-large);
   }
 }
@@ -58,6 +61,7 @@
 @media (min-width: 1024px) {
   .book-store__image {
     width: 250px;
+    height: 250px;
   }
 }
 
@@ -156,5 +160,5 @@
 }
 
 .book-store__flag {
-  width: 30px;
+  width: 32px;
 }
