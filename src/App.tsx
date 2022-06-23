@@ -7,6 +7,7 @@ type Image = {
 };
 
 type Book = {
+  id: string;
   title: string;
   author: string;
 };
@@ -31,8 +32,8 @@ const dummyBookStore = {
   rating: 4,
   image: { url: "https://via.placeholder.com/100", alt: "Book Store Image" },
   books: [
-    { title: "Book 1", author: "Author 1" },
-    { title: "Book 2", author: "Author 2" },
+    { id: "1", title: "Book 1", author: "Author 1" },
+    { id: "2", title: "Book 2", author: "Author 2" },
   ],
 };
 

@@ -1,0 +1,47 @@
+.book-stores {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style: none;
+}
+
+.book-store {
+  position: relative;
+  width: 100%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: #fff;
+}
+
+.book-store__image {
+  padding: var(--spacing-default);
+}
+
+.book-store__text {
+  padding: var(--spacing-default);
+}
+
+.book-store__name {
+  margin: 0 0 24px 0;
+}
+
+.book-store__rating {
+  display: flex;
+  position: absolute;
+  top: var(--spacing-default);
+  right: var(--spacing-default);
+  padding: 0;
+  list-style: none;
+}
+
+.book-store__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-default);
+  padding-top: 0;
+}
+
+.book-store__flag {
+  width: 30px;
+}

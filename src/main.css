@@ -1,0 +1,21 @@
+:root {
+  --spacing-small: 0.25rem;
+  --spacing-medium: 0.5rem;
+  --spacing-default: 1rem;
+  --spacing-large: 1.5rem;
+  --spacing-xlarge: 2rem;
+}
+
+html,
+body {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #eee;
+}
+
+#app {
+  padding: var(--spacing-default);
+}
