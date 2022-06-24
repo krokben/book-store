@@ -37,3 +37,5 @@ or
 ```
 npm run build
 ```
+
+NOTE: The app assumes the Book Store API is running on `http://localhost:3000`.
