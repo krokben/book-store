@@ -25,17 +25,6 @@ export interface BookStore {
   bookIds: string[];
 }
 
-const dummyBookStore = {
-  id: "1",
-  name: "Book Store",
-  website: "www.bookstore.com",
-  establishmentDate: "1995-02-09T00:00:00+0000",
-  country: "CH",
-  rating: 4,
-  image: { url: "https://via.placeholder.com/100", alt: "Book Store Image" },
-  bookIds: ["1", "2"],
-};
-
 const getStatusMessage = (status: Status) => {
   switch (status) {
     case "ERROR":
@@ -63,8 +52,6 @@ export function App() {
       type: "stores" | "books" | "authors" | "countries"
     ) => {
       const response = await fetch(`http://localhost:3000/${type}`);
-      // const { data } = await response.json();
-      // return data;
       return response.json();
     };
 
@@ -136,6 +123,7 @@ export function App() {
           books={books}
           authors={authors}
           countries={countries}
+          setBookStores={setBookStores}
         />
       ) : (
         <div>{getStatusMessage(status)}</div>
