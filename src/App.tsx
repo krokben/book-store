@@ -63,14 +63,20 @@ export function App() {
       type: "stores" | "books" | "authors" | "countries"
     ) => {
       const response = await fetch(`http://localhost:3000/${type}`);
-      const { data } = await response.json();
-      return data;
+      // const { data } = await response.json();
+      // return data;
+      return response.json();
     };
 
-    fetchData("stores")
-      .then((data) =>
+    Promise.all([
+      fetchData("stores"),
+      fetchData("books"),
+      fetchData("authors"),
+      fetchData("countries"),
+    ])
+      .then(([storeData, bookData, authorData, countryData]) => {
         setBookStores(
-          data.map(({ id, attributes, relationships }) => ({
+          storeData.data.map(({ id, attributes, relationships }) => ({
             id,
             name: attributes.name,
             website: attributes.website,
@@ -82,17 +88,9 @@ export function App() {
               ? relationships.books.data.map((book: { id: string }) => book.id)
               : [],
           }))
-        )
-      )
-      .catch((error) => {
-        console.error(error);
-        setStatus("ERROR");
-      });
-
-    fetchData("books")
-      .then((data) =>
+        );
         setBooks(
-          data.reduce(
+          bookData.data.reduce(
             (acc, { id, attributes, relationships }) => ({
               ...acc,
               [id]: {
@@ -103,47 +101,31 @@ export function App() {
             }),
             {}
           )
-        )
-      )
-      .catch((error) => {
-        console.error(error);
-        setStatus("ERROR");
-      });
-
-    fetchData("authors")
-      .then((data) =>
+        );
         setAuthors(
-          data.reduce(
+          authorData.data.reduce(
             (acc, { id, attributes }) => ({
               ...acc,
               [id]: attributes.fullName,
             }),
             {}
           )
-        )
-      )
+        );
+        setCountries(
+          countryData.data.reduce(
+            (acc, { id, attributes }) => ({
+              ...acc,
+              [id]: attributes.code.toLowerCase(),
+            }),
+            {}
+          )
+        );
+        setStatus("SUCCESS");
+      })
       .catch((error) => {
         console.error(error);
         setStatus("ERROR");
       });
-
-    fetchData("countries").then((data) =>
-      setCountries(
-        data.reduce(
-          (acc, { id, attributes }) => ({
-            ...acc,
-            [id]: attributes.code.toLowerCase(),
-          }),
-          {}
-        )
-      )
-    );
-
-    if (status === "ERROR") {
-      return;
-    }
-
-    setStatus("SUCCESS");
   }, []);
 
   return (
