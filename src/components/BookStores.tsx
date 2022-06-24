@@ -95,6 +95,8 @@ export const BookStores = ({
                   ) : (
                     bookIds
                       .filter((id) => books[id])
+                      .sort((a, b) => books[b].copiesSold - books[a].copiesSold)
+                      .slice(0, 2)
                       .map((id) => (
                         <tr key={`book-${id}`}>
                           <td className="book-store__book-info">
@@ -102,6 +104,9 @@ export const BookStores = ({
                           </td>
                           <td className="book-store__book-info">
                             {authors[books[id].authorId]}
+                          </td>
+                          <td className="book-store__book-info">
+                            {books[id].copiesSold}
                           </td>
                         </tr>
                       ))
