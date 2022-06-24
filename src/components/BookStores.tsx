@@ -105,9 +105,6 @@ export const BookStores = ({
                           <td className="book-store__book-info">
                             {authors[books[id].authorId]}
                           </td>
-                          <td className="book-store__book-info">
-                            {books[id].copiesSold}
-                          </td>
                         </tr>
                       ))
                   )}
